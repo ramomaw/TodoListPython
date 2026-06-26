@@ -1,7 +1,7 @@
 def to_do_list():
-
-    tasks = []
-    while True:
+     name = input("enter the file name:")
+     tasks = []
+     while True:
         print("1.add task")
         print("2.remove task")
         print("3.show tasks")
@@ -21,6 +21,11 @@ def to_do_list():
              for task in tasks:
                   print("# "+ task)
         elif choice == "4":
+          
+             with open(f"{name}.txt", "w") as file:
+                  for item in tasks:
+                       file.write(f"{item}\n")
+             print(f"you items have tasks have been saved to a file named{name} ")
              break
         else:
              print("incorrect input")
